@@ -1,0 +1,1 @@
+// Contenuto fittizio di RegisterClient.jsx
