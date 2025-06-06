@@ -1,34 +1,38 @@
-
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './style.css'
 
+const Categorie = [
+  { nome: 'Moto', sottocategorie: ['Strada', 'Enduro', 'Motocross', 'Custom', 'Ricambi', 'Accessori'] },
+  { nome: 'Scooter', sottocategorie: ['Ricambi', 'Accessori'] },
+  { nome: 'Moto Elettriche', sottocategorie: ['Stradali', 'Fuoristrada'] },
+  { nome: 'Bici', sottocategorie: ['Corsa', 'MTB', 'Ricambi', 'Accessori'] },
+  { nome: 'Bici Elettriche', sottocategorie: ['City', 'Trekking'] },
+  { nome: 'Offerte', sottocategorie: [] }
+]
+
 const Menu = () => (
   <nav className="menu">
-    <ul>
-      <li>Moto
-        <ul>
-          <li>Ricambi</li>
-          <li>Accessori</li>
-        </ul>
-      </li>
-      <li>Scooter</li>
-      <li>Moto elettriche</li>
-      <li>Bici
-        <ul>
-          <li>Ricambi</li>
-          <li>Accessori</li>
-        </ul>
-      </li>
-      <li>Bici elettriche</li>
-      <li>Offerte</li>
-    </ul>
+    {Categorie.map(cat => (
+      <div key={cat.nome} className="menu-item">
+        <strong>{cat.nome}</strong>
+        {cat.sottocategorie.length > 0 && (
+          <ul>
+            {cat.sottocategorie.map((s, i) => <li key={i}>{s}</li>)}
+          </ul>
+        )}
+      </div>
+    ))}
   </nav>
 )
 
 const App = () => (
   <div>
-    <h1 style={{ textAlign: 'center', color: 'gold' }}>TotalZone</h1>
+    <header className="header">
+      <img src="/logo.png" alt="TotalZone" className="logo"/>
+      <h1>TotalZone</h1>
+      <p className="slogan">Your Quality Zone</p>
+    </header>
     <Menu />
   </div>
 )
