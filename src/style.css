@@ -1,0 +1,19 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: black;
+  color: gold;
+}
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+.menu > ul > li {
+  padding: 10px;
+  border-bottom: 1px solid gold;
+}
+.menu li ul {
+  margin-left: 20px;
+  font-size: 0.9em;
+}
