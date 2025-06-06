@@ -1,1 +1,0 @@
-// Contenuto fittizio di App.jsx
